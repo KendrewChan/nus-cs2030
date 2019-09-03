@@ -1,16 +1,16 @@
 class Loader {
   private final int id;
-  private boolean isRecycled;
+  private final boolean isRecycled;
   private Cruise cruise;
 
-  public Loader(int id) {
+  public Loader(int id, boolean isRecycled) {
     this.id = id;
     this.cruise = null;
-    this.isRecycled = false;
+    this.isRecycled = isRecycled;
   }
 
   public Loader initWithCruise(Cruise newCruise) {
-    Loader newLoader = new Loader(this.id);
+    Loader newLoader = new Loader(this.id, this.isRecycled);
     newLoader.cruise = newCruise;
     return newLoader;
   }
@@ -21,10 +21,6 @@ class Loader {
 
   public int getId() {
     return this.id;
-  }
-
-  public void setIsRecycled(boolean x) {
-    this.isRecycled = x;
   }
 
   /**

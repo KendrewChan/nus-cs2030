@@ -54,13 +54,6 @@ class Main {
       int numLoadersToFulfil = cruise.getNumLoadersRequired();
 
       for (int n = 0; n < numLoadersToFulfil; n++) {
-        /**
-         * third loader is recyled loader
-         * 60 min maintenance 
-         *
-         *
-         *
-         */
         int loadersSize = loaders.size();
         if (loadersSize > 0) {
           boolean hasServed = false;
@@ -77,10 +70,14 @@ class Main {
 
           if (!hasServed) {
             int id = loadersSize + 1;
-            Loader newLoader = new Loader(id).serve(cruise);
+
+            Loader newLoader;
+
             // If is third loader, make it recycled
             if (id % 3 == 0) {
-              newLoader.setIsRecycled(true);
+              newLoader = new Loader(id, true).serve(cruise);
+            } else {
+              newLoader = new Loader(id, false).serve(cruise);
             }
 
             loaders.add(newLoader);
@@ -88,7 +85,7 @@ class Main {
           }
 
         } else {
-          Loader newLoader = new Loader(one).serve(cruise);
+          Loader newLoader = new Loader(one, false).serve(cruise);
           loaders.add(newLoader);
           printLoader(newLoader);
         }
