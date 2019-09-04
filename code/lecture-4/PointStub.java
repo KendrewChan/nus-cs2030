@@ -1,0 +1,3 @@
+class PointStub extends Point {
+  
+}
