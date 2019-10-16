@@ -1,0 +1,7 @@
+Dog dog = new Dog("A", 2, "Woof!");
+
+try {
+        dog.eat(new Cheese("Magnolia"));
+    } catch (CannotEatException e) {
+        System.err.println(e.getMessage());
+    }

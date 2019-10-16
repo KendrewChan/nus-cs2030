@@ -1,4 +1,4 @@
-public class Circle implements Shape, Scalable, Printable {
+public class Circle implements Scalable, PrintableShape {
   private final double radius;
 
   public Circle(double radius) {

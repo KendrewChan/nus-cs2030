@@ -1,0 +1,11 @@
+public class CannotEatException extends Exception {
+    public CannotEatException(Animal animal, Food food) {
+        String message = String.format("%s cannot eat %s", animal, food);
+
+        if (animal.isFull()) {
+            message += " as it is full";
+        }
+
+        super(message);
+    }
+}

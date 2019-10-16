@@ -1,0 +1,18 @@
+import java.util.List;
+import java.util.ArrayList;
+
+class ChildTrace<T> extends Trace<T> {
+    private ChildTrace(List<T> values) {
+        super(values);
+    }
+
+    @SafeVarargs
+    public static <X> ChildTrace<X> of(X value, X... args) {
+        List<X> xs = new ArrayList<>();
+        for (int i = 0; i < args.length; i++) {
+            xs.add(args[i]);
+        }
+        xs.add(value);
+        return new ChildTrace<>(xs);
+    }
+}

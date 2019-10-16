@@ -1,0 +1,57 @@
+import java.util.PriorityQueue;
+import java.util.Comparator;
+
+public class Quest {
+    public static class QuestComparator implements Comparator<Quest> {
+        @Override
+        public int compare(Quest a, Quest b) {
+            int x = Integer.compare(b.getEnergyReq(), a.getEnergyReq());
+
+            if (x != 0) {
+                return x;
+            } else {
+                int y =  Integer.compare(a.getNMonsters(), b.getNMonsters());
+                return y;
+            }
+        }
+    }
+
+    private int energyReq;
+
+    private int nMonsters;
+
+    public static PriorityQueue<Quest> quests;
+
+    private Quest(int energyReq, int nMonsters) {
+        this.energyReq = energyReq;
+        this.nMonsters = nMonsters;
+    }
+
+    private int getEnergyReq() {
+        return this.energyReq;
+    }
+
+    private int getNMonsters() {
+        return this.nMonsters;
+    }
+
+    public static Quest createNewQuest(int energyReq, int nMonsters) {
+        return new Quest(energyReq, nMonsters);
+    }
+
+    public static void addNewQuest(int health, int energyReq) {
+       if (!(Quest.quests.comparator() instanceof QuestComparator)) {
+           Quest.quests = new PriorityQueue<>(new QuestComparator());
+       }
+       Quest.quests.add(new Quest(energyReq, health)); 
+    }
+
+    public static Quest getEasiestQuest() {
+        return Quest.quests.peek();
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Quest: \n      Energy Available: %d\n      Monsters: %d", this.energyReq, this.nMonsters);
+    }
+}

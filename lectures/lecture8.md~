@@ -1,0 +1,15 @@
+# Lecture 8
+
+- Functional and declarative programming
+- Function
+    - pure function with no side effects
+    - functor and monad
+- Internal versus external iteration
+- Stream concepts using IntStream and Stream<T>
+    - Stream elements and pipelines
+    - Intermediate and terminal operations
+    - Stateless vs stateful operations
+    - lazy and eager evaluations
+    - map and flatMap
+    - reducation
+    - infinite streams

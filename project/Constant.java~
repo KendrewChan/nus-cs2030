@@ -1,0 +1,3 @@
+public interface Constant {
+    public static final double SERVICE_TIME = 1.0;
+}

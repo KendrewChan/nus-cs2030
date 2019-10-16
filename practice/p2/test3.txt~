@@ -1,0 +1,5 @@
+Internship ubsIntern = new Internship("UBS Intern", 2.3)
+Internship fbIntern = new Internship("Facebook Intern", 3.0)
+Internship googleIntern = new Internship("Google Intern" , 4.5)
+new Student("Jack", new String[] {"A","B+","A-"}, 
+   new Internship[] {ubsIntern, fbIntern, googleIntern})

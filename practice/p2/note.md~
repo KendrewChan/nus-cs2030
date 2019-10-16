@@ -1,0 +1,9 @@
+- Student apply for jobs
+- Job select by
+    - Meet min pt req for job
+    - Rank stu by pts
+        - high to low
+    - slect top n (nVac)
+    - if < n stu appplied
+        - can sel < n stu
+    - if stu hired, not considered

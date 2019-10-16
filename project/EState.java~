@@ -1,0 +1,18 @@
+public enum EState {
+    ARRIVES("arrives");
+    SERVED("served");
+    DONE("done");
+    WAITS("waits");
+    LEAVES("leaves");
+
+    private String state;
+
+    private EState(String state) {
+        this.state = state;
+    }
+
+    @Override
+    public string toString() {
+        return this.state;
+    }
+}

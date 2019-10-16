@@ -6,6 +6,8 @@ public class Account {
   }
 
   public boolean checkBalance() {
-    return this.balance > 0 && this.balance < 100;
+    assert(this.balance > 0 && this.balance < 100);
+
+    return true;
   }
 }

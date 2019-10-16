@@ -32,3 +32,16 @@ can only serve afterwards
 - starts with char B
 - - T minutes to serve: 0 - 99
 - X loader to load 0 to 0
+
+### Post-lab review
+
+- Should not actually store the BigCruise data in Cruise
+- Original class should be extensible
+- isRecycled property should not be inside the cruise
+- One class should only do one thing
+
+**Focus on:**
+
+- inheritance
+- polymorphism
+- overriding

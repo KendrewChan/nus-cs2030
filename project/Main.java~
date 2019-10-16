@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+class Main {
+    public static Servers getServers(Scanner sc) {
+        return new Servers(sc.nextInt());
+    }
+
+    public static Evts getEvts(Scanner sc) {
+        Evts evts = new Evts();
+        int counter = 0;
+
+        while (sc.hasNextDouble()) {
+            counter++;
+
+            Customer customer = new Customer(counter, sc.nextDouble());
+
+            Evt evt = new Evt(customer, State.ARRIVES);
+
+            evts.add(evt);
+        }
+
+        return evts;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Servers servers = getServers(sc);
+        Evts evts = getEvts(sc);
+        evts.run(servers);
+    }
+}
