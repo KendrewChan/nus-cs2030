@@ -38,13 +38,14 @@ class Main {
     int numOfServers = scanner.nextInt();
     SimState state = new SimState(numOfServers);
     state = getState(scanner, state);
+
     return state;
   }
 
   public static SimState getState(Scanner scanner, SimState refState) {
     if (scanner.hasNextDouble()) {
       double arrivalTime = scanner.nextDouble();
-      SimState state = refState.addEvent(arrivalTime, x -> refState.simulateArrival(arrivalTime));
+      SimState state = refState.addEvent(arrivalTime, s -> s.simulateArrival(arrivalTime));
       return getState(scanner, state);
     }
 

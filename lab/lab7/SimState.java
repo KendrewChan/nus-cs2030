@@ -114,8 +114,6 @@ public class SimState {
         PriorityQueue<Event> newEvents = this.events.copy();
         Pair<Optional<Event>, PriorityQueue<Event>> result = newEvents.poll();
 
-        System.out.println(newEvents.size());
-
         return Pair.of(result.first, new SimState(this.shop.copy(), this.stats.copy(), result.second, this.log, this.customerIdCounter));
     }
 
